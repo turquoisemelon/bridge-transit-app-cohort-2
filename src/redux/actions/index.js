@@ -60,9 +60,9 @@ export const hideAddressWindow = () => ({
   payload: ''
 });
 
-export const getGeolocation = location => ({
+export const getGeolocation = geolocation => ({
   type: ACTION_TYPES.GET_GEOLOCATION,
-  payload: location
+  payload: geolocation
 });
 
 export const updateEventDetailRender = () => ({
