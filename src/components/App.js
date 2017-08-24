@@ -4,7 +4,7 @@ import { inputChange, setSearchKeyword, getCategories, setAddresses, selectAddre
   showAddressWindow, hideAddressWindow, getGeolocation, updateEventDetailRender } from './../redux/actions';
 import { Navigation } from './Navigation';
 import { AddressWindow } from './AddressWindow';
-
+import { selectSavedAddress } from './utils';
 class App extends Component {
   componentDidMount() {
     this.props.getCategories();
