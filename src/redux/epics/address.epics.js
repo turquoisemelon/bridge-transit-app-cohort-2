@@ -33,14 +33,16 @@ const doCORSRequest = (options) => {
 })};
 
 
-//TODO: change fetch to Observable.ajax
+// todo: change fetch to Observable.ajax
 export const getAddressEpic = (action$, _, {ajax}) =>
     action$.ofType(ACTION_TYPES.ADDRESS_INPUT_CHANGE)
         .debounceTime(400)
-        .mergeMap(action => 
-    /* use this for development */ doCORSRequest({method: 'GET', url: `${BASE_ENDPOINT}&query=${action.payload.replace(/\s/g, '+')}`})
-    /* use this for production */ /* fetch(`${BASE_ENDPOINT}&query=${action.payload.replace(/\s/g, '+')}`) */
-                            .then(res => JSON.parse(res), error => console.log(error)))
+        .mergeMap(action =>
+          /* use this for development */
+          doCORSRequest({method: 'GET', url: `${BASE_ENDPOINT}&query=${action.payload.replace(/\s/g, '+')}`})
+          /* use this for production */
+          /* fetch(`${BASE_ENDPOINT}&query=${action.payload.replace(/\s/g, '+')}`) */
+          .then(res => JSON.parse(res), error => console.log(error)))
         .map(response => ({
                 type: ACTION_TYPES.SET_ADDRESSES,
                 payload: response.results})
