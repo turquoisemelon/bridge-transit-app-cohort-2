@@ -47,6 +47,7 @@ const connectConfig = connect(state => ({
   displayAddressWindow: state.address.displayAddressWindow,
   categoriesFetching: state.category.isFetching,
   eventsFetching: state.events.isFetching,
+  geolocation: state.address.geolocation,
 }), {
   inputChange,
   setSearchKeyword,
