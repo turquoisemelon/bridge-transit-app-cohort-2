@@ -69,3 +69,7 @@ export const updateEventDetailRender = () => ({
   type: ACTION_TYPES.UPDATE_EVENT_DETAIL_RENDER,
 });
 
+export const getFormattedGeolocation = formattedGeolocation => ({
+  type: ACTION_TYPES.GET_FORMATTED_GEOLOCATION,
+  payload: formattedGeolocation
+});
